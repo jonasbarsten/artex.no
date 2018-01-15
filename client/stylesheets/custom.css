@@ -1,0 +1,108 @@
+.logo-font {
+	font-family: "Times New Roman";
+	text-transform: none;
+}
+
+.times-font {
+	font-family: "Times New Roman";
+}
+
+strong {
+	font-weight: bold;
+}
+
+.main-layout header, .main-layout main, .main-layout footer {
+	padding-left: 240px;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #616161; /* Just change the color value and that's it*/
+}
+
+#menu-button-mobile {
+	width: 150px;
+	height: 150px;
+}
+
+.menu-button-mobile-icon {
+	font-size: 2.5em;
+	margin-top: 34px;
+}
+
+#sidenav-overlay {
+	display: none !important;
+}
+
+.ql-snow .ql-out-bottom, .ql-snow .ql-out-top {
+	visibility: visible;
+}
+
+.button-collapse {
+	display: none;
+}
+
+.fr-view {
+	padding-top: 2rem;
+}
+
+.fr-view p {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.form-header {
+	padding-top: 2rem;
+}
+
+.div-list {
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.bw {
+	filter: grayscale(100%);
+}
+
+/*The side-nav wanted to go away even in fixed state maybe due to FlowRouter?*/
+@media only screen and (min-width : 992px) {
+	#slide-out {
+		transform: none !important;
+	}
+
+	#menu-button-mobile-wrapper {
+		display: none;
+	}
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+
+	html {
+		font-size: 2em;
+	}
+
+	.side-nav a {
+		font-size: 60px;
+	}
+
+	.side-nav li {
+		padding: 30px 0;
+	}
+
+	.side-nav .menu-logo {
+		margin-top: 30px;
+	}
+
+	.card .card-title {
+		font-size: 2.28rem;
+	}
+
+	.main-layout header, .main-layout main, .main-layout footer {
+		padding-left: 0px;
+	}
+
+}

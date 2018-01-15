@@ -1,0 +1,24 @@
+{
+	"_locale": "nb-NO",
+	"client": {
+		"front": {
+			"pages": {
+				"about": {
+					"title": "Hallo folkens"
+				}
+			}
+
+		},
+		"secure": {
+
+		}
+	},
+	"server": {
+		"alerts": {
+
+		},
+		"emails": {
+
+		}
+	}
+}

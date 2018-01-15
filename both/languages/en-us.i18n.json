@@ -1,0 +1,24 @@
+{
+	"_locale": "en-US",
+	"client": {
+		"front": {
+			"pages": {
+				"about": {
+					"title": "Hello there guys"
+				}
+			}
+
+		},
+		"secure": {
+
+		}
+	},
+	"server": {
+		"alerts": {
+
+		},
+		"emails": {
+
+		}
+	}
+}

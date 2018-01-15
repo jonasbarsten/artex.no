@@ -1,0 +1,18 @@
+{
+	"client": {
+		"front": {
+
+		},
+		"secure": {
+
+		}
+	},
+	"server": {
+		"alerts": {
+
+		},
+		"emails": {
+			
+		}
+	}
+}
