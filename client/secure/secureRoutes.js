@@ -1,8 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-import {mount} from 'react-mounter';
+import { mount } from 'react-mounter';
 
-import {SecureLayout} from './layouts/SecureLayout.js';
+import { SecureLayout } from './layouts/SecureLayout.js';
 
 import Login from './components/login/Login.js';
 import Dashboard from './components/dashboard/Dashboard.js';

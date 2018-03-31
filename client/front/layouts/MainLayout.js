@@ -5,9 +5,6 @@ import MainFooter from './MainFooter.js';
 
 export const MainLayout = ({content}) => (
 	<div className="main-layout">
-		<header>
-			<MainNav />
-		</header>
 		<main>
 			{content}
 		</main>

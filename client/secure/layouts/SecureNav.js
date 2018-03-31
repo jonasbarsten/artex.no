@@ -31,7 +31,7 @@ export default class SecureNav extends Component {
 					<a href="#" className="brand-logo">&nbsp;&nbsp;ArtEx - Portal</a>
 					<ul id="nav-mobile" className="right hide-on-med-and-down">
 						<li>
-							<a href="/aboutNo">Om ArtEx</a>
+							<a href="https://artex.no">Om ArtEx</a>
 						</li>
 						{canManageUsers}
 						{isModerator}

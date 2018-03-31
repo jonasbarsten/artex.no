@@ -12,7 +12,8 @@ strong {
 }
 
 .main-layout header, .main-layout main, .main-layout footer {
-	padding-left: 240px;
+	/*padding-left: 240px;*/
+	margin-top: 50px;
 }
 
 blockquote {

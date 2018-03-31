@@ -21,7 +21,7 @@ import ParticipantsPage from './components/pages/ParticipantsPage.js';
 FlowRouter.route('/', {
 	action() {
 		mount(MainLayout, {
-			content: (<Home />)
+			content: (<Login />)
 		})
 	}
 });
