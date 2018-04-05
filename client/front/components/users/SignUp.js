@@ -72,7 +72,7 @@ export default class SignUp extends Component {
 
 	render () {
 
-		const openRegistration = false;
+		const openRegistration = true;
 
 		if (!openRegistration) {
 			return (
@@ -124,6 +124,8 @@ export default class SignUp extends Component {
 					</form>
 
 				</div>
+
+				<p style={{color: "red"}}>Vi lagrer informasjonen i skjema for å kunne sende deg info og nyhetsbrev i tråd med nye GDPR-retningslinjer fra Datatilsynet.</p>
 
 				<p>Already have an account? <a href="/login">Log In</a></p>
 
