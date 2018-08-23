@@ -56,6 +56,20 @@ export default class UsersWrapper extends TrackerReact(React.Component) {
 			var userList = [];
 		}
 
+		let archivedUserList = [];
+		let currentUserList = [];
+
+		userList.map((user) => {
+			if (user.profile === undefined) {
+				return;
+			};
+			if (user.profile.archived) {
+				archivedUserList.push(user);
+			} else {
+				currentUserList.push(user);
+			}
+		});
+
 		return (
 			<div className="container">
 				<h3>Users</h3>
@@ -63,9 +77,10 @@ export default class UsersWrapper extends TrackerReact(React.Component) {
 				<div className="row">
 					<div className="col s12">
 						<ul className="tabs">
-							<li className="tab col s4"><a className="active" href="#crewTab">Crew</a></li>
-							<li className="tab col s4"><a href="#pendingInvitesTab">Pending Invites</a></li>
-							<li className="tab col s4"><a href="#applicantsTab">Applicants</a></li>
+							<li className="tab col s3"><a className="active" href="#crewTab">Crew</a></li>
+							<li className="tab col s3"><a href="#pendingInvitesTab">Pending Invites</a></li>
+							<li className="tab col s3"><a href="#applicantsTab">Applicants</a></li>
+							<li className="tab col s3"><a href="#archiveTab">Archive</a></li>
 
 						</ul>
 					</div>
@@ -107,14 +122,31 @@ export default class UsersWrapper extends TrackerReact(React.Component) {
 					</div>
 
 					<div id="applicantsTab" className="col s12">
-						<ApplicantEmailList userList={userList}/>
+						<ApplicantEmailList id={"currentApplicantEmailList"} userList={currentUserList}/>
 						<ul className="collection">
-							{this.userList().map( (user) => {
+							{currentUserList.map( (user) => {
 
-								var isApplicant = Roles.userIsInRole(user._id, 'applicant');
+								const isApplicant = Roles.userIsInRole(user._id, 'applicant');
+								// const isArchived = (user.profile && user.profile.archived) ? true : false;
 
 								if (isApplicant) {
 									return <ApplicantSingle key={user._id} user={user}></ApplicantSingle>
+								}
+								
+							})}
+						</ul>
+					</div>
+
+					<div id="archiveTab" className="col s12">
+						<ApplicantEmailList id={"archivedApplicantEmailList"} userList={archivedUserList}/>
+						<ul className="collection">
+							{archivedUserList.map( (user) => {
+
+								const isApplicant = Roles.userIsInRole(user._id, 'applicant');
+								// const isArchived = (user.profile && user.profile.archived);
+
+								if (isApplicant) {
+									return <ApplicantSingle key={user._id} user={user} archived={true}></ApplicantSingle>
 								}
 								
 							})}

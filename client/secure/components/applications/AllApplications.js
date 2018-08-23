@@ -59,6 +59,9 @@ export default class AllApplications extends TrackerReact(React.Component) {
 
 	render () {
 
+		const deleteButton = Roles.userIsInRole(Meteor.userId(), ['super-admin']) ? 
+			<span className="pull-right" onClick={() => this.deleteApplication(application._id)}>Delete</span> : null;
+
 		return (
 
 
@@ -85,7 +88,7 @@ export default class AllApplications extends TrackerReact(React.Component) {
 															<img src="/images/avatar.png" alt="" className="circle" />
 															<span className="title">{applicant.profile.firstName} {applicant.profile.lastName} - {applicant.emails[0].address}</span>
 															<p>{Moment(applicant.profile.dateOfBirth).fromNow(true)}</p>
-															<span className="pull-right" onClick={() => this.deleteApplication(application._id)}>Delete</span>
+															{deleteButton}
 														</li>
 												</ul>
 											</div>

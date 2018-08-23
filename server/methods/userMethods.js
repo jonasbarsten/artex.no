@@ -237,5 +237,9 @@ Meteor.methods({
   				Roles.addUsersToRoles(user._id, 'moderator');
   			}
 		}
+	},
+
+	archiveUser (user) {
+		Meteor.users.update({_id: user._id}, {$set: {'profile.archived': true}});
 	}
 });

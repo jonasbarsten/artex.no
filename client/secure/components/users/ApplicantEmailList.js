@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
+// import uuid from 'uuid/v4';
 
 export default class ApplicantEmailList extends Component {
-	componentDidMount() {
-
-
-	}
 
 	render () {
+
+		// const id = uuid();
+		// console.log(id);
 
 		if (this.props.userList) {
 			var userList = this.props.userList;
@@ -14,8 +14,8 @@ export default class ApplicantEmailList extends Component {
 		
 		var emailList = [];
 
-		if (document.getElementById('applicantEmailList')) {
-			var textArea = document.getElementById('applicantEmailList');
+		if (document.getElementById(this.props.id)) {
+			var textArea = document.getElementById(this.props.id);
 		}
 		
 
@@ -34,7 +34,7 @@ export default class ApplicantEmailList extends Component {
 		return (
 			<div>
 				<p>Email List</p>
-				<textarea id="applicantEmailList"></textarea>
+				<textarea id={this.props.id}></textarea>
 			</div>
 
 			);
