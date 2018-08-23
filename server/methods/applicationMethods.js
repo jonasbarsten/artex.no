@@ -13,6 +13,10 @@ Meteor.methods({
 	deleteApplication(id) {
 		check(id, String);
 
-		Applications.remove({_id: id});
+		const isSuperAdmin = Roles.userIsInRole(Meteor.userId(), ['super-admin']);
+
+		if (isSuperAdmin) {
+			Applications.remove({_id: id});
+		}
 	}
 });
