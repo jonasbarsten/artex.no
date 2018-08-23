@@ -8,5 +8,11 @@ Meteor.methods({
 			motivation: form.motivation,
 			lastUpdate: new Date()
 		}});
+	},
+
+	deleteApplication(id) {
+		check(id, String);
+
+		Applications.remove({_id: id});
 	}
 });

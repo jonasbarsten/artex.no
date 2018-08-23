@@ -50,6 +50,12 @@ export default class AllApplications extends TrackerReact(React.Component) {
 		return Meteor.users.findOne({_id: applicantId}, {fields: {profile: 1, emails: 1}});
 	}
 
+	deleteApplication(id) {
+		if (confirm("Sure?")) {
+			Meteor.call('deleteApplication', id);
+		}
+	}
+
 
 	render () {
 
@@ -72,60 +78,57 @@ export default class AllApplications extends TrackerReact(React.Component) {
 						if (applicant) {
 
 							return (
-							    <li key={application._id} className="collection-item avatar">
-							    	<div className="collapsible-header hoverable">
+									<li key={application._id} className="collection-item avatar">
+										<div className="collapsible-header hoverable">
+												<ul className="collection">
+														<li className="collection-item avatar">
+															<img src="/images/avatar.png" alt="" className="circle" />
+															<span className="title">{applicant.profile.firstName} {applicant.profile.lastName} - {applicant.emails[0].address}</span>
+															<p>{Moment(applicant.profile.dateOfBirth).fromNow(true)}</p>
+															<span className="pull-right" onClick={() => this.deleteApplication(application._id)}>Delete</span>
+														</li>
+												</ul>
+											</div>
+											<div className="collapsible-body">
 
+													<div className="container">
+														{application.nationality} - {application.education}
+													</div>
 
-										<ul className="collection">
-										    <li className="collection-item avatar">
-										      <img src="/images/avatar.png" alt="" className="circle" />
-										      <span className="title">{applicant.profile.firstName} {applicant.profile.lastName} - {applicant.emails[0].address}</span>
-										      <p>{Moment(applicant.profile.dateOfBirth).fromNow(true)}</p>
-										      
-										    </li>
-										</ul>
+													<div className="divider"></div>
 
-			      					</div>
-			      					<div className="collapsible-body">
+													<div className="row">
+												
+														<div className="fr-view flow-text col s9" dangerouslySetInnerHTML={motivation}></div>
+														<div className="col s3">
+															<ul>
 
-			      							<div className="container">
-			      								{application.nationality} - {application.education}
-			      							</div>
+															{files.map( (file) => {
 
-			      							<div className="divider"></div>
+																let link = this.generateLink(file._id);
 
-			      							<div className="row">
-			      						
-			      								<div className="fr-view flow-text col s9" dangerouslySetInnerHTML={motivation}></div>
-			      								<div className="col s3">
-			      									<ul>
-
-			      									{files.map( (file) => {
-
-			      										let link = this.generateLink(file._id);
-
-			      										// Giving the file it's correct name for downloading for the user
+																// Giving the file it's correct name for downloading for the user
 														link = link.substring(0, link.lastIndexOf("/"));
 														link = link + '/' + file.name;
 
-			      										return (
-			      											<li key={file._id}>
-			      												<a href={link} target="_blank" className="truncate">
-			      													{file.name}
-			      												</a>
-			      											</li>
-			      										);
-			      									})}
+																return (
+																	<li key={file._id}>
+																		<a href={link} target="_blank" className="truncate">
+																			{file.name}
+																		</a>
+																	</li>
+																);
+															})}
 
-			      									</ul>
+															</ul>
 
-			      								</div>
-			      								
-			      							</div>
-			      							
-			      						
-			      					</div>
-			    				</li>
+														</div>
+														
+													</div>
+													
+												
+											</div>
+									</li>
 
 							);
 						}
