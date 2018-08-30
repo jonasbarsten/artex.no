@@ -72,7 +72,7 @@ export default class SignUp extends Component {
 
 	render () {
 
-		const openRegistration = false;
+		const openRegistration = true;
 
 		if (!openRegistration) {
 			return (
