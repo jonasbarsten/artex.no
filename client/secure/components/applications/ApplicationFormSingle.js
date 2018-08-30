@@ -33,7 +33,10 @@ export default class ApplicationFormSingle extends Component {
 	}
 
 	saveForm (event) {
-		event.preventDefault();
+
+		if (event) {
+			event.preventDefault();
+		}
 
 		const applicationId = this.props.application._id;
 
@@ -62,6 +65,8 @@ export default class ApplicationFormSingle extends Component {
 	}
 
 	submitApplication() {
+
+		this.saveForm();
 
 		swal({
 			title: "Are you sure? / Er du sikker?",
