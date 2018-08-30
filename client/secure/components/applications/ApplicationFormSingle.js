@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Quill from 'quill';
+import swal from 'sweetalert';
 
 import FileUploadWrapper from '../files/FileUploadWrapper.jsx';
 import Countdown from '../utilities/countdown';
@@ -34,35 +35,67 @@ export default class ApplicationFormSingle extends Component {
 	saveForm (event) {
 		event.preventDefault();
 
-		// const applicationId = this.props.application._id;
+		const applicationId = this.props.application._id;
 
-		// var motivation = $('#motivation-container .ql-editor').html();
-		// var motivationLength = this.quill.getLength();
+		var motivation = $('#motivation-container .ql-editor').html();
+		var motivationLength = this.quill.getLength();
 
-		// const form = {};
+		const form = {};
 
-		// form.nationality = this.refs.nationality.value;
-		// form.education = this.refs.education.value;
-		// form.motivation = motivation;
+		form.nationality = this.refs.nationality.value;
+		form.education = this.refs.education.value;
+		form.motivation = motivation;
 		
-		Bert.alert('Saving failed, deadline reached', 'danger', 'fixed-top', 'fa-frown-o');
+		// Bert.alert('Saving failed, deadline reached', 'danger', 'fixed-top', 'fa-frown-o');
 
-		// if (motivationLength < 4000) {
-		// 	Meteor.call('updateApplication', applicationId, form, (error, result) => {
-		// 		if (error) {
-		// 			Bert.alert('Saving failed, check your internet connection', 'danger', 'fixed-top', 'fa-frown-o');
-		// 		} else {
-		// 			Bert.alert('Document saved', 'success', 'fixed-top', 'fa-smile-o');
-		// 		}
-		// 	});
-		// } else {
-		// 	Bert.alert('Saving failed, motivation over 4000 characters', 'danger', 'fixed-top', 'fa-frown-o');
-		// }
+		if (motivationLength <= 4000) {
+			Meteor.call('updateApplication', applicationId, form, (error, result) => {
+				if (error) {
+					Bert.alert('Saving failed, check your internet connection', 'danger', 'fixed-top', 'fa-frown-o');
+				} else {
+					Bert.alert('Document saved', 'success', 'fixed-top', 'fa-smile-o');
+				}
+			});
+		} else {
+			Bert.alert('Saving failed, motivation over 4000 characters', 'danger', 'fixed-top', 'fa-frown-o');
+		}
+	}
+
+	submitApplication() {
+
+		swal({
+			title: "Are you sure? / Er du sikker?",
+			text: "You can't undo this and the application will be locked for further editing / Du kan ikke angre dette og søknaden vil ikke lenger kunne editeres.",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			confirmButtonText: "Submit! / Send inn!",
+			closeOnConfirm: true
+		},
+		() => {
+
+			Meteor.call('lockApplication', this.props.application._id, (err, res) => {
+				if (err) {
+					console.log(err);
+				} else {
+					Bert.alert('Application submitted!', 'success', 'fixed-top', 'fa-smile-o');
+				}
+			})
+	
+		});
 	}
 
 
 	render() {
 		const doc = this.props.application;
+
+		if (!doc) {
+			return <h1>Loading</h1>;
+		}
+
+		if (doc.locked) {
+			return <h1>Application already submitted</h1>;
+		}
 
 		return (
 			<div className="z-depth-1">
@@ -171,8 +204,6 @@ export default class ApplicationFormSingle extends Component {
 						<button className="btn waves-effect waves-light" type="submit">Save</button>
 					</form>
 
-					
-
 					<div className="col s12">
 
 						<p>{this.props.files.length} / 7 attachments</p>
@@ -180,7 +211,11 @@ export default class ApplicationFormSingle extends Component {
 						<FileUploadWrapper files={this.props.files} attachToType='application' attachToId={doc._id} max="7"/>
 
 					</div>
+				
+				</div>
 
+				<div className="row">
+					<button onClick={this.submitApplication.bind(this)}className="btn waves-effect red col s12">SUBMIT / SEND INN</button>
 				</div>
 			</div>
 		);

@@ -38,6 +38,8 @@ var secureRoutes = FlowRouter.group({
 	triggersEnter: [function(context, redirect) {
 		if (!Meteor.userId()) {
 			FlowRouter.go('/login');
+		} else {
+			Meteor.call('unarchiveUser');
 		}
 
 		// console.log('running group triggers');

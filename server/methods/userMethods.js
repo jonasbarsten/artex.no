@@ -125,7 +125,7 @@ Meteor.methods({
 
 			// Create application for user
 			Applications.insert({
-				name: "ArtEx 2017",
+				name: "ArtEx 2019",
 				applicantId: userId
 			});
 
@@ -241,5 +241,9 @@ Meteor.methods({
 
 	archiveUser (user) {
 		Meteor.users.update({_id: user._id}, {$set: {'profile.archived': true}});
+	},
+
+	unarchiveUser () {
+		Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.archived': false}});
 	}
 });

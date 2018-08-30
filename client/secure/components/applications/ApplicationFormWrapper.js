@@ -21,7 +21,19 @@ export default class ApplicationFormWrapper extends TrackerReact(React.Component
 	}
 
 	applicationDocs() {
-		return Applications.find({'applicantId': Meteor.userId()}).fetch();
+		let application = Applications.find({'applicantId': Meteor.userId()}).fetch();
+
+		if (application.length == 0) {
+			Meteor.call('createApplication', Meteor.userId(), (err, res) => {
+				if (err) {
+					console.log(err);
+				} else {
+					application = res;
+				}
+			})
+		};
+
+		return application;
 	}
 
 	userFiles() {

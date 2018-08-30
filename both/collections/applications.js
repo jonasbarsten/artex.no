@@ -45,6 +45,10 @@ const ApplicationsSchema = new SimpleSchema({
 	"evaluations": {
 		type: [Object],
 		optional: true
+	},
+	"locked": {
+		type: Boolean,
+		optional: true
 	}
 	// "evaluations.$.moderatorId": {
 	// 	type: String,
