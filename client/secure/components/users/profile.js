@@ -113,7 +113,7 @@ export default class Profile extends TrackerReact(React.Component) {
 						</div>
 						<div className="row">
 							<div className="input-field col s12">
-								<label htmlFor="dateOfBirth">Date of birth</label>
+								<label htmlFor="dateOfBirth" className="active">Date of birth</label>
 								<input ref="dateOfBirth" id="dateOfBirth" type="date" className="datepicker" defaultValue={dateOfBirth}/>
 								
 							</div>
