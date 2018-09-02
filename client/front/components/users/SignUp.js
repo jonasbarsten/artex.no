@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import swal from 'sweetalert';
+import moment from 'moment';
 
 export default class SignUp extends Component {
 
@@ -12,7 +14,7 @@ export default class SignUp extends Component {
 		
 		$('.datepicker').pickadate({
 			selectMonths: true, // Creates a dropdown to control month
-			selectYears: 100, // Creates a dropdown of 15 years to control year
+			selectYears: 100, // Creates a dropdown of 100 years to control year
 			format: 'yyyy-mm-dd',
 			firstDay: 'monday',
 			min: undefined,
@@ -42,6 +44,16 @@ export default class SignUp extends Component {
 		check(lastName, String);
 		check(password, String);
 		check(dateOfBirth, String);
+
+		const now = moment();
+		const birth = moment(dateOfBirth);
+
+		const yearsOld = moment.duration(now.diff(birth)).asYears();
+
+		if (yearsOld <= 1) {
+			swal("I dont't think you are less than one year old, please input your correct date of birth.");
+			return;
+		}
 
 		// Make user object
 

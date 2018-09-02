@@ -131,7 +131,6 @@ export default class ApplicationFormSingle extends Component {
 						<div className="card blue">
 							<div className="card-content white-text">
 								<span className="card-title">Dokumentasjon og vedlegg</span>
-								
 								<ul>
 									<li>Dokumentasjon av kunstnerisk virke kan legges ved søknaden, sammen med CV.</li>
 									<li>De kunstneriske vedleggene må være representative for deg og ditt virke der du er i dag og bør i hovedsak dokumentere nyere arbeider.</li>
@@ -148,13 +147,12 @@ export default class ApplicationFormSingle extends Component {
 						<div className="card yellow">
 							<div className="card-content">
 								<span className="card-title">Generelt</span>
-								
 								<ul>
 									<li>Av hensyn til Faglig Råds arbeidsmengde, og for å styrke prinsippet om lik behandling av alle søknader, må vedleggsvolumet begrenses.</li>
 									<li>Ufullstendige søknader, eller søknader ikke levert til fristen blir ikke vurdert.</li>
-									<li>Frist: 1. desember 2016 </li>
-									<li>Samtaler for aktuelle Talenter blir gjort av Faglig Råd fra medio januar 2017 </li>
-									<li>Programdeltaker vil bli tatt opp i ArtEx fra vinter 2017 og for 2 år. Det er Faglig Råd sammen med Talent Norge som behandler og vurdere søknadene.</li>
+									<li>Frist: 15. oktober 2018.</li>
+									<li>Samtaler for aktuelle Talenter blir gjort av Faglig Råd fra november/desember 2018.</li>
+									<li>Programdeltaker vil bli tatt opp i ArtEx fra jan 2019 og for 2 år. Det er Faglig Råd sammen med Talent Norge som behandler og vurdere søknadene.</li>
 									<li>Spørsmål om opptak sendes til <a href="mailto:monica@talentnorge.no">Monica</a></li>
 									<li>Avslag på søknad om plass i ArtEx programmet kan gis uten begrunnelse. Talent Norge er ikke underlagt forvaltningsloven. Dette innebærer at det ikke er mulig å klage på selskapets beslutninger.</li>
 								</ul>
