@@ -92,6 +92,13 @@ export default class ApplicationFormSingle extends Component {
 
 
 	render() {
+
+		const openRegistration = false;
+
+		if (!openRegistration) {
+			return <h4>Applications may no longer be edited</h4>
+		}
+
 		const doc = this.props.application;
 
 		if (!doc) {
