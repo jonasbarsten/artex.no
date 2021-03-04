@@ -51,7 +51,7 @@ ostrio:templatehelpers
 aldeed:collection2
 aldeed:simple-schema
 
-themeteorchef:bert
+themeteorchef:bert@2.1.1
 meteortoys:allthings
 
 materialize:materialize
