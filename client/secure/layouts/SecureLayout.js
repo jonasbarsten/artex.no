@@ -1,13 +1,10 @@
-import React from 'react';
-import SecureNav from './SecureNav.js';
+import React from "react";
+import SecureNav from "./SecureNav.js";
 
-export const SecureLayout = ({content}) => (
-	<div>
+export const SecureLayout = ({ content }) => (
+  <div>
+    <SecureNav />
 
-			<SecureNav />
-
-		<main>
-			{content}
-		</main>
-	</div>
-)
+    <main>{content}</main>
+  </div>
+);

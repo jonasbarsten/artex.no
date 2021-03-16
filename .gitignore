@@ -5,3 +5,4 @@ settings-development.json
 sftp-config.json
 packages/materialize/
 packages/.DS_Store
+.DS_Store
