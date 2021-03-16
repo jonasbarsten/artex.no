@@ -7,3 +7,4 @@
 
 - server/methods/applicationMethods.js:37 -> name: "ArtEx 20xx"
 - server/methods/userMethods.js:151 -> name: "ArtEx 20xx"
+- Archive and delete all applicants via admin panel
