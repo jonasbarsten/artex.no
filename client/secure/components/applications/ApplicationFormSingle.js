@@ -148,8 +148,7 @@ export default class ApplicationFormSingle extends Component {
                     Hvorfor søker du ArtEx og hva du ønsker du å få ut av din
                     deltakelse i programmet?
                   </li>
-                  <li>Hva er dine forutsetninger for deltakelse?</li>
-                  <li>Hva er dine forventinger til ArtEx?</li>
+                  <li>Hva er dine forventninger til ArtEx?</li>
                   <li>
                     Hva kan du som deltager tilby fellesskapet og de andre
                     deltakerne i ArtEx?
@@ -164,21 +163,15 @@ export default class ApplicationFormSingle extends Component {
                 <span className="card-title">Dokumentasjon og vedlegg</span>
                 <ul>
                   <li>
-                    Dokumentasjon av kunstnerisk virke kan legges ved søknaden,
-                    sammen med CV.
+                    CV, dokumentasjon av kunstnerisk virke, og eventuelt bevis
+                    på utdanning kan legges ved søknaden.
                   </li>
                   <li>
                     De kunstneriske vedleggene må være representative for deg og
-                    ditt virke der du er i dag og bør i hovedsak dokumentere
-                    nyere arbeider.
+                    ditt virke der du er i dag, og bør i hovedsak dokumentere
+                    nyere arbeider. 
                   </li>
-                  <li>
-                    Maks 7 vedlegg som dokumenterer kunstnerisk virke og CV kan
-                    vedlegges søknaden.
-                  </li>
-                  <li>Last opp dokumentasjon.</li>
-                  <li>Last opp cv.</li>
-                  <li>Last bevis på utdanning.</li>
+                  <li>Maks 7 vedlegg kan vedlegges.</li>
                   <li>Legg ved link til eventuell musikk og video.</li>
                 </ul>
               </div>
@@ -189,34 +182,43 @@ export default class ApplicationFormSingle extends Component {
               <div className="card-content">
                 <span className="card-title">Generelt</span>
                 <ul>
+                  <li>Frist: 20. april 2021.</li>
+                  <li>Søkere må holde av datoene 28 og 29 mai 2021.</li>
                   <li>
-                    Av hensyn til Faglig Råds arbeidsmengde, og for å styrke
-                    prinsippet om lik behandling av alle søknader, må
-                    vedleggsvolumet begrenses.
+                    Samtaler med aktuelle talenter blir gjort av juryen og
+                    Talent Norge april/mai 2021.
                   </li>
                   <li>
-                    Ufullstendige søknader, eller søknader ikke levert til
-                    fristen blir ikke vurdert.
-                  </li>
-                  <li>Frist: 15. oktober 2018.</li>
-                  <li>
-                    Samtaler for aktuelle Talenter blir gjort av Faglig Råd fra
-                    november/desember 2018.
+                    Programdeltaker vil bli tatt opp i ArtEx fra mai 2021 og for
+                    2 år. Det er juryen sammen med Talent Norge som behandler og
+                    vurderer søknadene.
                   </li>
                   <li>
-                    Programdeltaker vil bli tatt opp i ArtEx fra jan 2019 og for
-                    2 år. Det er Faglig Råd sammen med Talent Norge som
-                    behandler og vurdere søknadene.
-                  </li>
-                  <li>
-                    Spørsmål om opptak sendes til{" "}
-                    <a href="mailto:monica@talentnorge.no">Monica</a>
+                    Spørsmål om opptak sendes til prosjektkoordinator Øystein
+                    Skar,{" "}
+                    <a href="mailto:oystein.skar@talentnorge.no">
+                      oystein.skar@talentnorge.no
+                    </a>
                   </li>
                   <li>
                     Avslag på søknad om plass i ArtEx programmet kan gis uten
                     begrunnelse. Talent Norge er ikke underlagt
                     forvaltningsloven. Dette innebærer at det ikke er mulig å
                     klage på selskapets beslutninger.
+                  </li>
+                  <li>
+                    Juryen består av følgende personer:
+                    <ul>
+                      <li>
+                        Maria Mediaas Jørstad - juryens leder og daglig leder
+                        Talent Norge
+                      </li>
+                      <li>Per Olav Sørensen - regissør</li>
+                      <li>Iram Haq – regissør og skuespiller</li>
+                      <li>Jarle Aambø - Olympiatoppen</li>
+                      <li>Moema Parrott – Polyarts</li>
+                      <li>Jasper Parrott – HarrisonParrott</li>
+                    </ul>
                   </li>
                 </ul>
               </div>
