@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import swal from "sweetalert";
 import moment from "moment";
+import Materialize from "materialize-css";
+import "materialize-css/dist/css/materialize.css";
 
 export default class SignUp extends Component {
   componentDidMount() {

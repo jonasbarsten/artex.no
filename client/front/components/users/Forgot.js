@@ -1,61 +1,73 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import Materialize from "materialize-css";
+import "materialize-css/dist/css/materialize.css";
 
 export default class Forgot extends Component {
+  componentDidMount() {
+    Materialize.updateTextFields();
+  }
 
-	componentDidMount() {
-		Materialize.updateTextFields();
-	}
+  handleSubmit(event) {
+    // Prevent reload
+    event.preventDefault();
 
-	handleSubmit (event) {
+    // Fetch data from form
+    const email = this.refs.emailAddress.value;
 
-		// Prevent reload
-		event.preventDefault();
+    // Validate
+    check(email, ValidEmail);
 
-		// Fetch data from form
-		const email = this.refs.emailAddress.value;
+    var options = {
+      email: email,
+    };
 
-		// Validate
-		check(email, ValidEmail);
+    // Send reset mail
+    Accounts.forgotPassword(options, function (error) {
+      if (error) {
+        alert(error.reason);
+      } else {
+        Bert.alert("Reset email sendt", "success", "fixed-top", "fa-smile-o");
+        FlowRouter.go("/login");
+      }
+    });
+  }
 
-		var options = {
-			'email': email
-		};
+  render() {
+    return (
+      <div className="login container">
+        <h4>Reset Password</h4>
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <div className="row">
+                <div className="input-field col s12 m6">
+                  <input
+                    ref="emailAddress"
+                    id="email"
+                    type="email"
+                    className="validate"
+                  />
+                  <label htmlFor="email">Email</label>
+                </div>
+              </div>
 
-		// Send reset mail
-		Accounts.forgotPassword(options, function(error) {
-			if (error) {
-				alert(error.reason);
-			} else {
-				Bert.alert('Reset email sendt', 'success', 'fixed-top', 'fa-smile-o');
-				FlowRouter.go('/login');
-			}
-		})
-	}
-
-	render () {
-		return (
-			<div className="login container">
-				<h4>Reset Password</h4>
-				<div className="row">
-					<div className="col-xs-12 col-sm-6 col-md-4">
-						<form onSubmit={ this.handleSubmit.bind(this) }>
-								
-							<div className="row">
-						        <div className="input-field col s12 m6">
-						        	<input ref="emailAddress" id="email" type="email" className="validate" />
-						        	<label htmlFor="email">Email</label>
-						        </div>
-						    </div>
-							
-							<button className="btn grey waves-effect waves-light" type="submit">Reset</button>
-			
-						</form>
-					</div>
-					<br />
-					<p>Did you suddenly remember? <a href="/login">Login</a></p>
-					<p>Don't have an account? <a href="/signup">Signup</a></p>
-				</div>
-			</div>
-		);
-	}
+              <button
+                className="btn grey waves-effect waves-light"
+                type="submit"
+              >
+                Reset
+              </button>
+            </form>
+          </div>
+          <br />
+          <p>
+            Did you suddenly remember? <a href="/login">Login</a>
+          </p>
+          <p>
+            Don't have an account? <a href="/signup">Signup</a>
+          </p>
+        </div>
+      </div>
+    );
+  }
 }
