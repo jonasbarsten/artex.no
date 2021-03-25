@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Quill from "quill";
 import swal from "sweetalert";
+import Materialize from "materialize-css";
 
 import FileUploadWrapper from "../files/FileUploadWrapper.jsx";
 import Countdown from "../utilities/countdown";

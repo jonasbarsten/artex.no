@@ -54,7 +54,7 @@ aldeed:simple-schema
 themeteorchef:bert@2.1.1
 meteortoys:allthings
 
-materialize:materialize
+# materialize:materialize
 # froala:editor
 dapearce:material-icons
 
