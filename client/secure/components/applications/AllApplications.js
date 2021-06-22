@@ -60,16 +60,22 @@ export default class AllApplications extends TrackerReact(React.Component) {
   }
 
   render() {
-    const deleteButton = Roles.userIsInRole(Meteor.userId(), [
+    // const deleteButton = Roles.userIsInRole(Meteor.userId(), [
+    //   "super-admin",
+    // ]) ? (
+    //   <span
+    //     className="pull-right"
+    //     onClick={() => this.deleteApplication(application._id)}
+    //   >
+    //     Delete
+    //   </span>
+    // ) : null;
+
+    const showDeleteButton = Roles.userIsInRole(Meteor.userId(), [
       "super-admin",
-    ]) ? (
-      <span
-        className="pull-right"
-        onClick={() => this.deleteApplication(application._id)}
-      >
-        Delete
-      </span>
-    ) : null;
+    ])
+      ? true
+      : false;
 
     return (
       <div className="container">
@@ -104,7 +110,16 @@ export default class AllApplications extends TrackerReact(React.Component) {
                         <p>
                           {Moment(applicant.profile.dateOfBirth).fromNow(true)}
                         </p>
-                        {deleteButton}
+                        {showDeleteButton ? (
+                          <span
+                            className="pull-right"
+                            onClick={() =>
+                              this.deleteApplication(application._id)
+                            }
+                          >
+                            Delete
+                          </span>
+                        ) : null}
                       </li>
                     </ul>
                   </div>

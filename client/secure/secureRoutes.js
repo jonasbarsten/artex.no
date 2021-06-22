@@ -14,6 +14,8 @@ import ApplicationFormWrapper from "./components/applications/ApplicationFormWra
 
 import Test from "./components/Test.js";
 
+import "materialize-css/dist/css/materialize.min.css";
+
 // Wait for Roles to start so we can use it in routes
 
 FlowRouter.wait();

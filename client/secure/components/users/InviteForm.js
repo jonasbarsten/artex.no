@@ -1,121 +1,131 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 export default class InviteForm extends Component {
-	constructor() {
-		super();
- 
- 		// Set default loading state to false
-		this.state = {
-			isLoading: false
-		};
-	}
+  constructor() {
+    super();
 
-	inviteUser(event) {
-		// Set loading to true
-		this.setState({isLoading: true});
-		
-		// do not reload on submit
-		event.preventDefault();
+    // Set default loading state to false
+    this.state = {
+      isLoading: false,
+    };
+  }
 
-		var assignedRoles = [];
+  inviteUser(event) {
+    // Set loading to true
+    this.setState({ isLoading: true });
 
-		if (this.refs.manageUsers.checked) {
-			assignedRoles.push('manage-users');
-		}
+    // do not reload on submit
+    event.preventDefault();
 
-		if (this.refs.moderator.checked) {
-			assignedRoles.push('moderator');
-		}
+    var assignedRoles = [];
 
-		// get content from input
-		var email = this.refs.email.value.trim();
+    if (this.refs.manageUsers.checked) {
+      assignedRoles.push("manage-users");
+    }
 
-		if (email) {
-			// Insert into DB
-			// Use (), not function since a normal function would not know "this"
-			Meteor.call('inviteUser', email, assignedRoles, (error, data) => {
-				// call is complete
-				if(error) {
-					Bert.alert('Could not invite user, check your internet connection', 'danger', 'fixed-top', 'fa-frown-o');
-					
-					// No longer loading
-					this.setState({isLoading: false});
-					this.refs.email.value = "";
+    if (this.refs.moderator.checked) {
+      assignedRoles.push("moderator");
+    }
 
-					// If invite was not sent, delete invite from db
-					Meteor.call('deleteInvite', email);
+    // get content from input
+    var email = this.refs.email.value.trim();
 
-				} else {
-					Bert.alert('User invited', 'success', 'fixed-top', 'fa-smile-o');
-					
-					// No longer loading
-					this.setState({isLoading: false});
+    if (email) {
+      // Insert into DB
+      // Use (), not function since a normal function would not know "this"
+      Meteor.call("inviteUser", email, assignedRoles, (error, data) => {
+        // call is complete
+        if (error) {
+          Bert.alert(
+            "Could not invite user, check your internet connection",
+            "danger",
+            "fixed-top",
+            "fa-frown-o"
+          );
 
-					// Clear input field
-					this.refs.email.value = "";
-				}
-			});
-		}
-	}
+          // No longer loading
+          this.setState({ isLoading: false });
+          this.refs.email.value = "";
 
-	render () {
+          // If invite was not sent, delete invite from db
+          Meteor.call("deleteInvite", email);
+        } else {
+          Bert.alert("User invited", "success", "fixed-top", "fa-smile-o");
 
-		const loading = this.state.isLoading ? 
-			<div className="progress">
-    			<div className="indeterminate"></div>
-			</div>
-		: "";
+          // No longer loading
+          this.setState({ isLoading: false });
 
-		return (
-			<div className="row z-depth-1">
-				
-				<form className="col s12" onSubmit={this.inviteUser.bind(this)}>
-					<div className="row">
+          // Clear input field
+          this.refs.email.value = "";
+        }
+      });
+    }
+  }
 
-						<div className="input-field col s4">
-							<input
-								id="email"
-								className="validate"
-								type="email" 
-								ref="email"
-							/>
-							<label htmlFor="email">Email</label>
-						</div>
+  render() {
+    const loading = this.state.isLoading ? (
+      <div className="progress">
+        <div className="indeterminate"></div>
+      </div>
+    ) : (
+      ""
+    );
 
-						<div className="input-field col s8">
-							<div className="col s4">
-								<input 
-									id="manageUsers"
-									className="filled-in"
-									type="checkbox"
-									ref='manageUsers'
-								/>
-								<label htmlFor="manageUsers">Administrere brukere</label>
-							</div>
-							<div className="col s4">
-								<input 
-									id="moderator"
-									className="filled-in"
-									type="checkbox"
-									ref='moderator'
-									defaultChecked
-								/>
-								<label htmlFor="moderator">Faglig Råd</label>
-							</div>
-							<div className="col s4">
-								<button className="btn waves-effect waves-light blue" type="submit">Send &nbsp;
-									<i className="mdi mdi-send"></i>
-								</button>
-							</div>
-						</div>
+    return (
+      <div className="row z-depth-1">
+        <form className="col s12" onSubmit={this.inviteUser.bind(this)}>
+          <div className="row">
+            <div className="input-field col s4">
+              <input id="email" className="validate" type="email" ref="email" />
+              <label htmlFor="email">Email</label>
+            </div>
 
-					</div>
-
-
-
-				</form>
-				{loading}
-			</div>
-		);
-	}
-};
+            <div className="input-field col s8">
+              <div className="col s4">
+                <input
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    pointerEvents: "all",
+                    zIndex: "10",
+                  }}
+                  id="manageUsers"
+                  className="filled-in"
+                  type="checkbox"
+                  ref="manageUsers"
+                />
+                <span>Administrere brukere</span>
+              </div>
+              <div className="col s4">
+                <input
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    pointerEvents: "all",
+                    zIndex: "10",
+                  }}
+                  id="moderator"
+                  className="filled-in"
+                  type="checkbox"
+                  ref="moderator"
+                  defaultChecked
+                />
+                <span>Faglig Råd</span>
+              </div>
+              <div className="col s4">
+                <button
+                  className="btn waves-effect waves-light blue"
+                  type="submit"
+                >
+                  Send &nbsp;
+                  <i className="mdi mdi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        {loading}
+      </div>
+    );
+  }
+}

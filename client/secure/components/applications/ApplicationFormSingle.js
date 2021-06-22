@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Quill from "quill";
 import swal from "sweetalert";
+import M from "materialize-css";
 
 import FileUploadWrapper from "../files/FileUploadWrapper.jsx";
 import Countdown from "../utilities/countdown";
@@ -28,7 +29,7 @@ export default class ApplicationFormSingle extends Component {
       );
     }
 
-    Materialize.updateTextFields();
+    M.updateTextFields();
   }
 
   saveForm(event) {
@@ -78,8 +79,7 @@ export default class ApplicationFormSingle extends Component {
     swal(
       {
         title: "Are you sure? / Er du sikker?",
-        text:
-          "You can't undo this and the application will be locked for further editing / Du kan ikke angre dette og søknaden vil ikke lenger kunne editeres.",
+        text: "You can't undo this and the application will be locked for further editing / Du kan ikke angre dette og søknaden vil ikke lenger kunne editeres.",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",

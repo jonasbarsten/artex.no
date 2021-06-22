@@ -21,6 +21,16 @@ export default class MainFooter extends Component {
             />
           </a>
           <a
+            href="https://www.norsk-tipping.no"
+            target="self"
+            className="valign col s4 hoverable"
+          >
+            <img
+              className="responsive-img"
+              src="/images/logos/norsk-tipping.png"
+            />
+          </a>
+          {/* <a
             href="https://www.sparebankstiftelsen.no/no"
             target="self"
             className="valign col s4 hoverable"
@@ -29,7 +39,7 @@ export default class MainFooter extends Component {
               className="responsive-img"
               src="/images/logos/sparebankstiftelsen.png"
             />
-          </a>
+          </a> */}
         </div>
         <div className="footer-copyright">
           <div className="container grey-text">
