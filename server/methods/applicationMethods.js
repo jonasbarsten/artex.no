@@ -34,7 +34,7 @@ Meteor.methods({
 
     if (!applicationExists) {
       const application = Applications.insert({
-        name: "ArtEx 2021",
+        name: "PopUp 2021",
         applicantId: applicantId,
       });
       return application;

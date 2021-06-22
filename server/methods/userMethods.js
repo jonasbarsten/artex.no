@@ -148,7 +148,7 @@ Meteor.methods({
 
       // Create application for user
       Applications.insert({
-        name: "ArtEx 2021",
+        name: "PopUp 2021",
         applicantId: userId,
       });
     } else {

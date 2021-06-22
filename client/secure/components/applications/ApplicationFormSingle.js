@@ -141,17 +141,20 @@ export default class ApplicationFormSingle extends Component {
                 <span className="card-title">Orientering</span>
                 <p>
                   Skriv kort om deg selv og din motivasjon for deltakelse i
-                  ArtEx (max 4000 tegn).
+                  PopUp (max 4000 tegn).
                 </p>
                 <ul>
                   <li>
-                    Hvorfor søker du ArtEx og hva du ønsker du å få ut av din
+                    Hvorfor søker du PopUp og hva du ønsker du å få ut av din
                     deltakelse i programmet?
                   </li>
-                  <li>Hva er dine forventninger til ArtEx?</li>
                   <li>
-                    Hva kan du som deltager tilby fellesskapet og de andre
-                    deltakerne i ArtEx?
+                    Hva slags mål ønsker du å ha oppnådd i løpet av programmet?
+                  </li>
+                  <li>
+                    Beskriv, så konkret som mulig, hva du ønsker å bruke de
+                    økonomiske midlene på, og hvordan bruken vil bidra til
+                    kunstneriske utvikling?
                   </li>
                 </ul>
               </div>
@@ -161,18 +164,18 @@ export default class ApplicationFormSingle extends Component {
             <div className="card blue">
               <div className="card-content white-text">
                 <span className="card-title">Dokumentasjon og vedlegg</span>
+                <p>Legg ved følgende vedlegg:</p>
                 <ul>
+                  <li>Kunstnerisk CV</li>
                   <li>
-                    CV, dokumentasjon av kunstnerisk virke, og eventuelt bevis
-                    på utdanning kan legges ved søknaden.
+                    Skriv kort om deg selv og din motivasjon for deltakelse i
+                    PopUp (max 4000 tegn) – se grønn boks. 
                   </li>
                   <li>
-                    De kunstneriske vedleggene må være representative for deg og
-                    ditt virke der du er i dag, og bør i hovedsak dokumentere
-                    nyere arbeider. 
+                    Dokumentasjon av kunstnerisk virke (legg ved link til musikk
+                    - enten på Spotify / SoundCloud, eller YouTube, eller last
+                    opp mp3)
                   </li>
-                  <li>Maks 7 vedlegg kan vedlegges.</li>
-                  <li>Legg ved link til eventuell musikk og video.</li>
                 </ul>
               </div>
             </div>
@@ -182,16 +185,18 @@ export default class ApplicationFormSingle extends Component {
               <div className="card-content">
                 <span className="card-title">Generelt</span>
                 <ul>
-                  <li>Frist: 20. april 2021.</li>
-                  <li>Søkere må holde av datoene 28 og 29 mai 2021.</li>
+                  <li>Søknadsfrist: 1 september 2021.</li>
                   <li>
-                    Samtaler med aktuelle talenter blir gjort av juryen og
-                    Talent Norge april/mai 2021.
+                    Samtaler med aktuelle kandidater blir gjort av ekstern
+                    faggruppe og Talent Norge, i løpet av september.
                   </li>
                   <li>
-                    Programdeltaker vil bli tatt opp i ArtEx fra mai 2021 og for
-                    2 år. Det er juryen sammen med Talent Norge som behandler og
-                    vurderer søknadene.
+                    Det er faggruppen i tillegg til prosjektleder som behandler
+                    og vurderer søknadene.
+                  </li>
+                  <li>
+                    Programdeltakere blir tatt opp i PopUp fra 1 oktober 2021 -
+                    og for 1 år.
                   </li>
                   <li>
                     Spørsmål om opptak sendes til prosjektkoordinator Øystein
@@ -201,24 +206,9 @@ export default class ApplicationFormSingle extends Component {
                     </a>
                   </li>
                   <li>
-                    Avslag på søknad om plass i ArtEx programmet kan gis uten
-                    begrunnelse. Talent Norge er ikke underlagt
-                    forvaltningsloven. Dette innebærer at det ikke er mulig å
-                    klage på selskapets beslutninger.
-                  </li>
-                  <li>
-                    Juryen består av følgende personer:
-                    <ul>
-                      <li>
-                        Maria Mediaas Jørstad - juryens leder og daglig leder
-                        Talent Norge
-                      </li>
-                      <li>Per Olav Sørensen - regissør</li>
-                      <li>Iram Haq – regissør og skuespiller</li>
-                      <li>Jarle Aambø - Olympiatoppen</li>
-                      <li>Moema Parrott – Polyarts</li>
-                      <li>Jasper Parrott – HarrisonParrott</li>
-                    </ul>
+                    Avslag på søknad om plass i programmet gis uten begrunnelse.
+                    Dette innebærer at det ikke er mulig å klage på selskapets
+                    beslutninger.
                   </li>
                 </ul>
               </div>

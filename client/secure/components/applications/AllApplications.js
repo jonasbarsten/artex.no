@@ -60,17 +60,6 @@ export default class AllApplications extends TrackerReact(React.Component) {
   }
 
   render() {
-    // const deleteButton = Roles.userIsInRole(Meteor.userId(), [
-    //   "super-admin",
-    // ]) ? (
-    //   <span
-    //     className="pull-right"
-    //     onClick={() => this.deleteApplication(application._id)}
-    //   >
-    //     Delete
-    //   </span>
-    // ) : null;
-
     const showDeleteButton = Roles.userIsInRole(Meteor.userId(), [
       "super-admin",
     ])

@@ -123,7 +123,7 @@ export default class SignUp extends Component {
             </div>
             <div className="row">
               <div className="input-field col s12">
-                <label htmlFor="dateOfBirth">Date of birth</label>
+                <label htmlFor="dateOfBirth">Date of birth (DD/MM/YYYY)</label>
                 <input
                   ref="dateOfBirth"
                   id="dateOfBirth"

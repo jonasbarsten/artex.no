@@ -43,9 +43,9 @@ export default class MainFooter extends Component {
         </div>
         <div className="footer-copyright">
           <div className="container grey-text">
-            © 2016 Copyright ArtEx
+            © 2021 Copyright PopUp
             <a className="grey-text right" href="/about">
-              Om ArtEx
+              Om PopUp
             </a>
           </div>
         </div>
