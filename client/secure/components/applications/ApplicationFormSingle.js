@@ -169,7 +169,7 @@ export default class ApplicationFormSingle extends Component {
                   <li>Kunstnerisk CV</li>
                   <li>
                     Skriv kort om deg selv og din motivasjon for deltakelse i
-                    PopUp (max 4000 tegn) – se grønn boks. 
+                    PopUp (max 4000 tegn) – se "orientering". 
                   </li>
                   <li>
                     Dokumentasjon av kunstnerisk virke (legg ved link til musikk
